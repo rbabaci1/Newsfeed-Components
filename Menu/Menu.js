@@ -9,8 +9,6 @@ let menuItems = [
   'Log Out'
 ];
 
- 
-
 // Step 1: Write a function that will create a menu component as seen below:
 // <div class="menu">
 //   <ul>
@@ -51,4 +49,4 @@ function createMenu(menuItems) {
 }
 
 // Step 6: add the menu component to the DOM.
-document.body.append(createMenu(menuItems));
+document.body.prepend(createMenu(menuItems));
