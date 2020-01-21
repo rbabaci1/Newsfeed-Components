@@ -25,7 +25,7 @@ function createMenu(menuItems) {
   let list = document.createElement('ul');
 
   // add a class to the menu
-  
+  menu.classList.add('menu');
 }
 
 // Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
