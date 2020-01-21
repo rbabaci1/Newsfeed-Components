@@ -102,8 +102,22 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  */
+function createArticle(dataObj) {
+  // create needed elements
+  let article = document.createElement('div');
+  let title = document.createElement('h2');
+  let date = document.createElement('p');
+  let firstP = document.createElement('p');
+  let secondP = document.createElement('p');
+  let thirdP = document.createElement('p');
+  let span = document.createElement('span');
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  // setup the structure of the elements
+  
+}
+
+  /* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
 
