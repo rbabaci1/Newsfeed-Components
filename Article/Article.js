@@ -85,6 +85,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: '3 Amazing JavaScript Games In Under 13kB of Code',
+    date: 'Feb 7th, 2019',
+    firstParagraph: `Everyone's sky offers the classic Asteroid style game but with an adventure and exploration RPG twist. 
+    You fly around space and its solar systems, contacting other civilizations and collecting resources. 
+    You can choose to complete missions peacefully, making allies, or just attack everything that comes in your way.`,
+
+    secondParagraph: `A shooter game where you run in a destroyed lab and your goal is to kill the spider-looking enemies
+    and find the terminals and reboot the systems. The game runs really smoothly, with nice pixelated 
+    graphics and great sound and lighting effects.`,
+
+    thirdParagraph: `This is a simple real-time-strategy game where a virus has infected some of your system's nodes and you
+    need to clear them before they spread. The game is really addicting and the more you play, 
+    the harder it gets and the more nodes you have to deal with.`
   }
 ];
 
@@ -116,10 +131,10 @@ function createArticle(dataObj) {
   // add needed classes to the elements
   article.classList.add('article');
   date.classList.add('date');
-  span.classList.add('expandButton');
+  expandButton.classList.add('expandButton');
 
   // setup the structure of the article
-  article.append(title, date, firstP, secondP, thirdP, span);
+  article.append(title, date, firstP, secondP, thirdP, expandButton);
 
   // add content to the elements
   title.append(dataObj.title);
@@ -138,9 +153,12 @@ function createArticle(dataObj) {
 }
 
 
-/*
-Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+// Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
+const articles = document.querySelector('.articles');
 
-Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+data.forEach(dataObj => {
+  let article = createArticle(dataObj);
+  articles.append(article);
+});
 
-*/
+// Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
