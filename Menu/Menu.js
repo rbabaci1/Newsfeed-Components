@@ -22,14 +22,24 @@ let menuItems = [
 function createMenu(menuItems) {
   // create needed elements
   let menu = document.createElement('div');
-  let list = document.createElement('ul');
+  let ulList = document.createElement('ul');
 
   // add a class to the menu
   menu.classList.add('menu');
+
+  // Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
+  menuItems.forEach(item => {
+    let listItem = document.createElement('li');
+    listItem.append(item);
+    // Add those items to the <ul>
+    ulList.append(listItem);
+  });
+
+  
+  return menu;
 }
 
-// Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
-// Add those items to the <ul>
+createMenu(['yes', 'hello']);
 
 // Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
 
