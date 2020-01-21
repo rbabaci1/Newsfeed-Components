@@ -12,14 +12,21 @@ let menuItems = [
  
 
 // Step 1: Write a function that will create a menu component as seen below:
-
 // <div class="menu">
 //   <ul>
 //     {each menu item as a list item}
 //   </ul>
 // </div>
-
 // The function takes an array as its only argument.
+
+function createMenu(menuItems) {
+  // create needed elements
+  let menu = document.createElement('div');
+  let list = document.createElement('ul');
+
+  // add a class to the menu
+  
+}
 
 // Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
 // Add those items to the <ul>
