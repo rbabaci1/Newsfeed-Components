@@ -50,5 +50,5 @@ function createMenu(menuItems) {
   return menu;
 }
 
-
 // Step 6: add the menu component to the DOM.
+document.body.append(createMenu(menuItems));
