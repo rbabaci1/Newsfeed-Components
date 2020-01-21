@@ -35,11 +35,12 @@ function createMenu(menuItems) {
     ulList.append(listItem);
   });
 
-  
-  return menu;
+  // append the ul to the menu
+  menu.append(ulList);
+
 }
 
-createMenu(['yes', 'hello']);
+// createMenu(['yes', 'hello']);
 
 // Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
 
