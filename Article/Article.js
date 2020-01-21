@@ -118,6 +118,8 @@ function createArticle(dataObj) {
   date.classList.add('date');
   span.classList.add('expandButton');
 
+  // setup the structure of the elements
+  article.append(title, date, firstP, secondP, thirdP, span);
 }
 // createArticle(data)
   /* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
