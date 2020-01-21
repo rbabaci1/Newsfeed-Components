@@ -126,15 +126,20 @@ function createArticle(dataObj) {
   let firstP = document.createElement('p');
   let secondP = document.createElement('p');
   let thirdP = document.createElement('p');
-  let expandButton = document.createElement('span');
+  let buttonPanel = document.createElement('div');
+  let expandButton = document.createElement('button');
+  let closeButton = document.createElement('button');
 
   // add needed classes to the elements
   article.classList.add('article');
   date.classList.add('date');
+  buttonPanel.classList.add('button-panel')
   expandButton.classList.add('expandButton');
+  closeButton.classList.add('expandButton', 'hide-btn');
 
   // setup the structure of the article
-  article.append(title, date, firstP, secondP, thirdP, expandButton);
+  buttonPanel.append(expandButton, closeButton);
+  article.append(title, date, firstP, secondP, thirdP, buttonPanel);
 
   // add content to the elements
   title.append(dataObj.title);
@@ -143,9 +148,13 @@ function createArticle(dataObj) {
   secondP.append(dataObj.secondParagraph);
   thirdP.append(dataObj.thirdParagraph);
   expandButton.textContent = '\u25bc';
+  closeButton.textContent = '\u25b2';
 
-  /* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div. */
-  expandButton.addEventListener('click', () => {
+  /* Step 2: Add an event listener to the buttonPanel div. This event listener should toggle the class 'article-open' on the 'article' div. */
+  buttonPanel.addEventListener('click', () => {
+    expandButton.classList.toggle('hide-btn');
+    closeButton.classList.toggle('hide-btn');
+
     article.classList.toggle('article-open');
   });
 
