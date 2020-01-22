@@ -73,7 +73,7 @@
   transform: translate(-50%);
 }
 .article-open {
-  height: 400px;
+  height: 510px;
   transition: 1s;
   background: #174822;
   color: #f9efef;
@@ -86,12 +86,15 @@
   display: none;
 }
 .button-panel button {
-  height: 35px;
-  width: 35px;
+  height: 28px;
+  width: 28px;
   background: #bed6b6;
   border-radius: 50%;
   border: none;
   padding: 5px;
+}
+.body {
+  background: #23231f;
 }
 .menu-button {
   position: absolute;

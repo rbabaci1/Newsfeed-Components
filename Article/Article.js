@@ -103,7 +103,7 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+/* Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
     <h2>{title of the article}</h2>
@@ -150,20 +150,21 @@ function createArticle(dataObj) {
   expandButton.textContent = '\u25bc';
   closeButton.textContent = '\u25b2';
 
-  /* Step 2: Add an event listener to the buttonPanel div. This event listener should toggle the class 'article-open' on the 'article' div. */
+  /* Add an event listener to the buttonPanel div. This event listener should toggle the class 'article-open' on the 'article' div. */
   buttonPanel.addEventListener('click', () => {
     expandButton.classList.toggle('hide-btn');
     closeButton.classList.toggle('hide-btn');
 
     article.classList.toggle('article-open');
+    document.body.classList.toggle('body');
   });
 
-  // Step 3: return the article component
+  // return the article component
   return article;
 }
 
 
-// Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
+// Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 const articles = document.querySelector('.articles');
 
 data.forEach(dataObj => {
@@ -171,4 +172,4 @@ data.forEach(dataObj => {
   articles.append(article);
 });
 
-// Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+// Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
