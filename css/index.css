@@ -88,7 +88,7 @@
 .button-panel button {
   height: 35px;
   width: 35px;
-  background: #299b05;
+  background: #bed6b6;
   border-radius: 50%;
   border: none;
   padding: 5px;
@@ -99,11 +99,12 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 75px;
   left: 0;
-  width: 350px;
+  width: 0;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -112,15 +113,35 @@
   border-bottom: none;
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
+  transition: 1s;
 }
 .menu ul li {
   list-style-type: none;
   font-size: 32px;
   padding: 30px 0;
   text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.menu ul li:hover {
+  transition: 1.5s;
+  background: #388d3b;
 }
 .menu--open {
-  display: block;
+  width: 350px;
+  opacity: 1;
+  visibility: visible;
+  transition: 1s;
+}
+.move-articles {
+  margin-left: 200px;
+}
+.move-articles .button-panel .expandButton {
+  left: 98%;
+  bottom: 5%;
+  transition: 1s;
 }
 html,
 body {

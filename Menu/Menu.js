@@ -38,10 +38,12 @@ function createMenu(menuItems) {
 
   // Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
   const menuButton = document.querySelector('.menu-button');
+  const articles = document.querySelector('.articles');
 
   // Step 4: add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on the menu (your div with a 'menu' class).
   menuButton.addEventListener('click', () => {
     menu.classList.toggle('menu--open');
+    articles.classList.toggle('move-articles');
   });
 
   // Step 5: return the menu component.
