@@ -85,10 +85,25 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: '3 Amazing JavaScript Games In Under 13kB of Code',
+    date: 'Feb 7th, 2019',
+    firstParagraph: `Everyone's sky offers the classic Asteroid style game but with an adventure and exploration RPG twist. 
+    You fly around space and its solar systems, contacting other civilizations and collecting resources. 
+    You can choose to complete missions peacefully, making allies, or just attack everything that comes in your way.`,
+
+    secondParagraph: `A shooter game where you run in a destroyed lab and your goal is to kill the spider-looking enemies
+    and find the terminals and reboot the systems. The game runs really smoothly, with nice pixelated 
+    graphics and great sound and lighting effects.`,
+
+    thirdParagraph: `This is a simple real-time-strategy game where a virus has infected some of your system's nodes and you
+    need to clear them before they spread. The game is really addicting and the more you play, 
+    the harder it gets and the more nodes you have to deal with.`
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+/* Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
     <h2>{title of the article}</h2>
@@ -102,13 +117,59 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  */
+function createArticle(dataObj) {
+  // create needed elements
+  let article = document.createElement('div');
+  let title = document.createElement('h2');
+  let date = document.createElement('p');
+  let firstP = document.createElement('p');
+  let secondP = document.createElement('p');
+  let thirdP = document.createElement('p');
+  let buttonPanel = document.createElement('div');
+  let expandButton = document.createElement('button');
+  let closeButton = document.createElement('button');
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  // add needed classes to the elements
+  article.classList.add('article');
+  date.classList.add('date');
+  buttonPanel.classList.add('button-panel')
+  expandButton.classList.add('expandButton');
+  closeButton.classList.add('expandButton', 'hide-btn');
 
-  Step 3: return the entire component.
+  // setup the structure of the article
+  buttonPanel.append(expandButton, closeButton);
+  article.append(title, date, firstP, secondP, thirdP, buttonPanel);
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  // add content to the elements
+  title.append(dataObj.title);
+  date.append(dataObj.date);
+  firstP.append(dataObj.firstParagraph);
+  secondP.append(dataObj.secondParagraph);
+  thirdP.append(dataObj.thirdParagraph);
+  expandButton.textContent = '\u25bc';
+  closeButton.textContent = '\u25b2';
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  /* Add an event listener to the buttonPanel div. This event listener should toggle the class 'article-open' on the 'article' div. */
+  buttonPanel.addEventListener('click', () => {
+    expandButton.classList.toggle('hide-btn');
+    closeButton.classList.toggle('hide-btn');
 
-*/
+    article.classList.toggle('article-open');
+    document.body.classList.toggle('body');
+  });
+
+  // return the article component
+  return article;
+}
+
+
+// Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
+const articles = document.querySelector('.articles');
+
+data.forEach(dataObj => {
+  let article = createArticle(dataObj);
+  articles.append(article);
+});
+
+// Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.

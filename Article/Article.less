@@ -11,6 +11,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: 1s;
 
   h2 {
     font-size: 28px;
@@ -33,18 +34,37 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    font-size: 12px;
-    color: grey;
+    font-size: 15px;
     cursor: pointer;
     transform: translate(-50%);
-    background-color: white;
   }
 }
 
 .article-open {
-  height: 400px;
+  height: 510px;
+  transition: 1s;
+  background: #174822;
+  color: #f9efef;
+  
+  p {
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
 }
 
+.hide-btn {
+  display: none;
+}
 
+.button-panel button {
+  height: 28px;
+  width: 28px;
+  background: #bed6b6;
+  border-radius: 50%;
+  border: none;
+  padding: 5px;
+}
 
-
+.body {
+  background: #23231f;
+}
